@@ -1,10 +1,11 @@
 @import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -15,4 +16,43 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/* .payment-steps .ant-steps-item {
+  padding-left: 20px;
+} */
+
+.payment-step > .ant-steps-item-container > .ant-steps-item-icon {
+  border: 0;
+  background-color: rgba(255, 138, 0, 0.2);
+  margin: 0 10px 0 0;
+}
+
+.payment-step.ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-icon {
+  background-color: #FF8A00;
+}
+
+.payment-step.ant-steps-item-wait .ant-steps-item-icon > .ant-steps-icon {
+  color: #FF8A00;
+}
+
+.payment-step.ant-steps-item-active .ant-steps-item-icon > .ant-steps-icon {
+  color: #FFFFFF;
+}
+
+.payment-steps.ant-steps-navigation .ant-steps-item::after {
+  margin-top: -9px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #FF8A00;
+  border-bottom: none;
+  border-left: none;
+}
+
+.payment-steps .payment-step::before {
+  display: none;
+}
+
+.payment-step > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title {
+  color: #FF8A00;
 }
