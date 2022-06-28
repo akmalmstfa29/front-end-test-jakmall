@@ -1,0 +1,44 @@
+.wrapper {
+  flex: 1 1 auto;
+  flex-direction: row;
+  background: none;
+}
+
+.content {
+  background: none;
+  width: 73%;
+}
+
+.main-content {
+  background: none;
+  padding-right: 30px;
+}
+
+.main-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 34px;
+}
+
+.step-header {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 36px;
+  color: #FF8A00;
+  margin: 0;
+}
+
+.delivery-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.basic-information {
+  width: 56.5%;
+}
+
+.dropshipper-information {
+  width: 41%;
+}

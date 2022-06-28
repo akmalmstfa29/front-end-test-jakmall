@@ -1,5 +1,5 @@
 @import '~antd/dist/antd.css';
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 html,
 body {
@@ -18,9 +18,48 @@ a {
   box-sizing: border-box;
 }
 
-/* .payment-steps .ant-steps-item {
-  padding-left: 20px;
-} */
+.summary-item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.summary-item-wrapper-big {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  margin-bottom: 12px;
+}
+
+.summary-item-title-big, .summary-item-value-big {
+  font-family: 'Montserrat';
+  font-size: 24px;
+  font-weight: 700;
+  color: #FF8A00 !important;
+}
+
+.flex-space {
+  flex-grow: 1;
+}
+
+/* adjustment for floatng label */
+.floating-label.ant-input {
+  padding: 28px 12px 8px 11px;
+}
+
+.floating-label.ant-select .ant-select-selector {
+  padding: 16px 10px 4px 11px;
+}
+
+.floating-label.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  padding: 16px 10px 4px 11px;
+  height: 48px;
+}
+
+.floating-label.ant-select-single .ant-select-selector .ant-select-selection-search {
+  top: 16px;
+}
+/* adjustment for floatng label */
 
 .payment-step > .ant-steps-item-container > .ant-steps-item-icon {
   border: 0;
@@ -55,4 +94,44 @@ a {
 
 .payment-step > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title {
   color: #FF8A00;
+}
+
+.green-checkbox {
+  margin-right: 30px;
+}
+
+
+.green-checkbox .ant-checkbox .ant-checkbox-inner {
+  border-radius: 0;
+}
+
+.green-checkbox.ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.green-checkbox .ant-checkbox:hover .ant-checkbox-inner,
+.green-checkbox .ant-checkbox-input:focus + .ant-checkbox-inner {
+  border-color: #1BD97B;
+}
+
+.green-checkbox .ant-checkbox-checked::after {
+  border-color: #1BD97B;
+}
+
+.green-checkbox .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #ffffff;
+  border-color: #1BD97B;
+}
+
+.green-checkbox .ant-checkbox-checked .ant-checkbox-inner::after {
+  border-color: #1BD97B;
+}
+
+/* custom primary button */
+.ant-btn-primary {
+  border-color: #FF8A00;
+  background: #FF8A00;
+}
+
+.ant-btn-primary:active, .ant-btn-primary:focus, .ant-btn-primary:hover {
+  color: #fff;
+  border-color: #f68300;
+  background: #f68300;
 }
