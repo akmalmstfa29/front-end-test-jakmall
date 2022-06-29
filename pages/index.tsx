@@ -7,6 +7,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import React from 'react'
 import SummaryItem from '../components/summary-item'
+import DeliveryContext, { DeliveryType } from '../context/delivery-context'
 import styles from '../styles/Home.module.css'
 import Delivery from './steps/delivery'
 
@@ -50,11 +51,22 @@ const Home: NextPage = () => {
     { title: 'Payment', submitText: 'Pay', status: 'wait' },
     { title: 'Finish', status: 'wait' },
   ]);
+  const [delivery, setDelivery] = React.useState<DeliveryType>({
+    email: '',
+    phoneNumber: '',
+    deliveryAddress: '',
+    asDropshipper: false,
+  });
+  const deliveryContextValue = { delivery, setDelivery };
   
   const RenderStep = () => {
     switch (currentStep) {
       case 0:
-        return <Delivery />;
+        return (
+          <DeliveryContext.Provider value={deliveryContextValue}>
+            <Delivery />
+          </DeliveryContext.Provider>
+        );
       case 1:
         return <Delivery />;
       case 2:

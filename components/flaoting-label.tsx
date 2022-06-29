@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styled from 'styled-components'
 const { TextArea } = ADInput;
 
-interface FloatLabelProps {
+interface FloatLabelProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
   type?: 'input' | 'textarea';
   value?: string | ReadonlyArray<string> | number | undefined;
@@ -54,4 +54,4 @@ const FloatLabel: React.FC<FloatLabelProps> = props => {
   );
 };
 
-export default React.memo(FloatLabel);
+export default FloatLabel;
