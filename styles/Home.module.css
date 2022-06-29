@@ -68,31 +68,3 @@
   flex-direction: row;
   background: unset;
 }
-
-.summary-wrapper {
-  background: unset;
-  width: 27%;
-  padding-left: 20px;
-  border-left: 0.5px solid #FF8A00;
-}
-
-.summary-header {
-  font-family: 'Montserrat';
-  font-weight: 700;
-  font-size: 24px;
-  color: #FF8A00;
-  margin: 0;
-  padding: 10px 0px;
-}
-
-.summary-item {
-  display: flex;
-  justify-content: space-between;
-}
-
-.submit-button {
-  padding: 20px 0px;
-  font-size: 18px;
-  font-weight: 500;
-  height: unset;
-}

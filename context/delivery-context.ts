@@ -7,6 +7,7 @@ export interface DeliveryType {
     asDropshipper: boolean;
     dropshipperName?: string;
     dropshipperPhoneNumber?: string;
+    dropshippingFee?: number;
 }
 
 interface DeliveryContextType {

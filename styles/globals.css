@@ -59,6 +59,16 @@ a {
 .floating-label.ant-select-single .ant-select-selector .ant-select-selection-search {
   top: 16px;
 }
+/* .floating-label.ant-input:focus, .ant-input-focused {
+  border: 1px solid #d9d9d9 !important;
+  box-shadow: 0 0 0 2px rgba(197, 200, 205, 0.2);
+}
+.floating-label.ant-input:hover {
+  border-color: #d9d9d9;
+}
+.floating-label.ant-input:hover + label {
+  color: #d9d9d9 !important;
+} */
 /* adjustment for floatng label */
 
 .payment-step > .ant-steps-item-container > .ant-steps-item-icon {

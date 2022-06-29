@@ -45,7 +45,7 @@ type Step = {
 // `;
 
 const Home: NextPage = () => {
-  const [currentStep] = React.useState(0);
+  const [currentStep, setCurrentStep] = React.useState(0);
   const [steps, changeStep] = React.useState<Array<Step>>([
     { title: 'Delivery', submitText: 'Continue to Payment', status: 'wait' },
     { title: 'Payment', submitText: 'Pay', status: 'wait' },
@@ -57,28 +57,41 @@ const Home: NextPage = () => {
     deliveryAddress: '',
     asDropshipper: false,
   });
-  const deliveryContextValue = { delivery, setDelivery };
   
+  const deliveryContextValue = { delivery, setDelivery };
+
   const RenderStep = () => {
     switch (currentStep) {
       case 0:
         return (
           <DeliveryContext.Provider value={deliveryContextValue}>
-            <Delivery />
+            <Delivery changeStep={setCurrentStep} />
           </DeliveryContext.Provider>
         );
       case 1:
-        return <Delivery />;
+        return (
+          <DeliveryContext.Provider value={deliveryContextValue}>
+            <Delivery changeStep={setCurrentStep} />
+          </DeliveryContext.Provider>
+        );
       case 2:
-        return <Delivery />;
+        return (
+          <DeliveryContext.Provider value={deliveryContextValue}>
+            <Delivery changeStep={setCurrentStep} />
+          </DeliveryContext.Provider>
+        );
       default:
-        return <Delivery />;
+        return (
+          <DeliveryContext.Provider value={deliveryContextValue}>
+            <Delivery changeStep={setCurrentStep} />
+          </DeliveryContext.Provider>
+        );
     }
   }
   
   React.useEffect(() => {
     adjustStatus()
-  }, []);
+  }, [currentStep]);
 
   return (
     <Layout className={styles.wrapper}>
@@ -100,15 +113,6 @@ const Home: NextPage = () => {
           <div className={styles['step-content']}>
             <Layout className={styles['step-content-wrapper']}>
               <RenderStep />
-              <Layout className={styles['summary-wrapper']}>
-                <h2 className={styles['summary-header']}>Summary</h2>
-                <Text type="secondary">10 items purchased</Text>
-                <div className='flex-space' />
-                <SummaryItem label='Cost of goods' value={'500,000'} />
-                <SummaryItem label='Dropshipping Fee' value={'5,900'} />
-                <SummaryItem isBig={true} label='Total' value={'505,900'} />
-                <Button className={styles['submit-button']} type="primary">{steps[currentStep]?.submitText}</Button>
-              </Layout>
             </Layout>
           </div>
         </div>
